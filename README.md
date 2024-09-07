@@ -2,7 +2,7 @@
 
 ## Overview
 
-The University Assignments Deadline Scheduler is a web application designed to help students manage their academic deadlines and exam schedules. Users can upload their course schedules in PDF format, and the application extracts deadlines and exam dates. It then schedules these important dates directly into Google Calendar for easy management and reminders.
+The University Assignment Deadline Scheduler is a web application designed to help students manage their academic deadlines and exam schedules. Users can upload their course schedules in PDF format, and the application extracts deadlines and exam dates. It then schedules these important dates directly into Google Calendar for easy management and reminders.
 
 ## Features
 
