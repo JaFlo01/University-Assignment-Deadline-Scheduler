@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Assignments Deadlines Scheduler</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <!-- Main Layout -->
+    <div class="navbar">University Assignments Deadlines Scheduler</div>
+    <div class="container">
+      <!-- Schedule Selection and Upload Section -->
+      <h1>Upload Your Course Schedule</h1>
+      <div class="upload-section">
+        <form id="uploadForm" enctype="multipart/form-data">
+          <label for="pdf" class="custom-file-upload">
+            Choose File
+            <input
+              type="file"
+              id="pdf"
+              name="pdf"
+              accept=".pdf"
+              onchange="updateFileName()"
+            />
+          </label>
+          <span id="fileName" class="file-name">No file chosen</span>
+          <button type="button" onclick="uploadFile()">Upload PDF</button>
+        </form>
+      </div>
+      <!-- List of Deadlines and Exams Section -->
+      <div id="results" class="results"></div>
+    </div>
+    <script src="/static/script.js"></script>
+  </body>
+</html>
