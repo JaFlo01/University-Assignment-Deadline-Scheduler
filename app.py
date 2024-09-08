@@ -44,12 +44,22 @@ def upload_pdf():
         # Add tasks to Google Calendar
         for deadline in deadlines:
             try:
-                due_date_str = deadline.split('Due on ')[-1]
+                due_date_str = deadline.split('due on ')[-1]
                 due_date = format_due_date_for_google_tasks(due_date_str)
                 task_title = f"{course_name}: {deadline}"
                 add_task_to_google_tasks(service, '@default', task_title, due_date)
             except Exception as e:
                 print(f"Error scheduling task '{deadline}': {e}")
+
+        # Add exams to Google Tasks
+        for exam in exams:
+            try:
+                exam_date_str = exam.split('on ')[-1]
+                exam_date = format_due_date_for_google_tasks(exam_date_str)
+                exam_title = f"{course_name}: {exam}"
+                add_task_to_google_tasks(service, '@default', exam_title, exam_date)
+            except Exception as e:
+                print(f"Error scheduling exam '{exam}': {e}")
 
         return jsonify(success=True, deadlines=deadlines, exams=exams)
     else:
